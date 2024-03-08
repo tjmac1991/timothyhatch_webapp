@@ -1,0 +1,28 @@
+.Posts {
+    //background-color: pink;
+    padding: 0 5%;
+
+    &__body {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__text {
+        text-wrap: wrap;
+        width: 60%;
+        font-size: large;
+        margin-top: 0;
+    }
+
+    &__date-container {
+        display: flex;
+        flex-direction: row;
+
+        &--date {
+            margin: 0;
+            padding-left: 5px;
+        }
+    }
+}
