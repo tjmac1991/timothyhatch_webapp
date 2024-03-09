@@ -13,7 +13,15 @@ type tMenuItems = {
 
 export const menuItems: tMenuItems[] = [
     {
-        name: 'Test',
+        name: 'Posts',
+        link: '/'
+    },
+    {
+        name: 'About',
+        link: '/about',
+    },
+    {
+        name: 'divider',
         divider: true,
     },
     {
@@ -30,6 +38,5 @@ export const menuItems: tMenuItems[] = [
         name: 't_timhatch',
         link: 'https://twitter.com/t_timhatch',
         Icon: TwitterIcon,
-        divider: true,
     },
 ];

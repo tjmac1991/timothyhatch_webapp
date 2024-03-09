@@ -8,7 +8,6 @@ type tNavMenuProps = {
 }
 
 export default function NavMenu({open, anchorEl, handleClose}: tNavMenuProps): JSX.Element {
-
     return (
         <Menu
             open={open}
@@ -20,25 +19,24 @@ export default function NavMenu({open, anchorEl, handleClose}: tNavMenuProps): J
         >
             {menuItems.map((item, index) => {
                 const {name, Icon, link, divider} = item;
+                if(link) {
+                    return (
+                        <MenuItem
+                            href={link}
+                            component={Link}
+                        >
+                            {Icon && <Icon />}&nbsp;{name}
+                        </MenuItem>
+                    );
+                } else if(divider) {
+                    return (<Divider />);
+                }
                 return (
-                    <>
-                        {link ?  
-                            <MenuItem
-                                href={link}
-                                component={Link}
-                            >
-                                {Icon && <Icon />}&nbsp;{name}
-                            </MenuItem>
-                        :
-                            <MenuItem>
-                                {name}
-                            </MenuItem>
-                        }
-                        {divider && <Divider />}
-                    </>
+                    <MenuItem>
+                        {name}
+                    </MenuItem>
                 );
             })}
-            <MenuItem onClick={handleClose}>Test</MenuItem>
         </Menu>
     );
 }
