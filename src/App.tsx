@@ -46,8 +46,6 @@ function App() {
   )
 
   useEffect(() => {
-    console.log('Current Path: ', location.pathname);
-    
     setPageTitle(setCurrentLocation(location.pathname))
   }, [location])
 
