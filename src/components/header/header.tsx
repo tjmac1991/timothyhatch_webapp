@@ -4,8 +4,11 @@ import { ReactElement, useState } from "react";
 import React from "react";
 import NavMenu from "../nav-menu/navMenu";
 
+type tHeaderProps = {
+    pageTitle: string;
+}
 
-export default function Header(): ReactElement {
+export default function Header({pageTitle}: tHeaderProps): ReactElement {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const menuOpen = Boolean(anchorEl);
 
@@ -33,7 +36,7 @@ export default function Header(): ReactElement {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h6" component="div">
-                            Posts
+                            {pageTitle}
                         </Typography>
                     </Toolbar>
                 </AppBar>
