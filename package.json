@@ -2,6 +2,17 @@
   "name": "timothyhatch-webapp",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "npm run copy && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "copy": "npm run copy-cmaps && npm run copy-standard-fonts && npm run copy-worker",
+    "copy-cmaps": "node --loader ts-node/esm ./scripts/copy-cmaps.ts",
+    "copy-standard-fonts": "node --loader ts-node/esm ./scripts/copy-standard-fonts.ts",
+    "copy-worker": "node --loader ts-node/esm ./scripts/copy-worker.ts"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
@@ -16,17 +27,15 @@
     "@types/react-dom": "^18.2.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-pdf": "^7.7.1",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "sass": "^1.71.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "ts-node": "^10.9.2"
   },
   "eslintConfig": {
     "extends": [
