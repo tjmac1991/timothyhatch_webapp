@@ -1,5 +1,3 @@
-// @ts-ignore
-import logo from './logo.svg';
 import './App.scss';
 import Posts from './components/posts/posts';
 import Header from './components/header/header';
@@ -14,7 +12,6 @@ import React, { useEffect, useState } from 'react';
 import { postList } from './constants/post.constant';
 import {
   Route,
-  BrowserRouter as Router,
   Routes,
   useLocation
 } from 'react-router-dom';
@@ -53,21 +50,6 @@ function App() {
     <ThemeProvider theme={theme(themeMode)}>
       <CssBaseline />
       <Box className="App">
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header> */}
-
         <Header pageTitle={pageTitle} />
           <Routes>
             <Route path="/" element={<Posts postList={postList} />} />

@@ -1,2 +1,53 @@
-.About {
+.About__chip-container {
+    padding: 2.5% 5%;
+
+    &--chip {
+        &.MuiChip-root {
+            margin: 5px;
+        }
+    }
+}
+
+.About__javascript-logo {
+  &.MuiSvgIcon-root {
+    height: 15px;
+  }
+}
+
+.About__vue-logo {
+  margin-top: 3px;
+  &.MuiSvgIcon-root {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+.About__angular-logo {
+  &.MuiSvgIcon-root {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+.About__react-logo {
+  pointer-events: none;
+  &.MuiSvgIcon-root {
+    height: 31px;
+    width: 31px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .About__react-logo {
+    animation: icon-spin infinite 10s linear;
+  }
+}
+
+@keyframes icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
