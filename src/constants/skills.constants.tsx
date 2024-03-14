@@ -74,7 +74,7 @@ export const skillsList: tSkillChip[] = [
     },
     {
         name: 'Jest',
-        CustomIcon: <JestLogo />,
+        CustomIcon: <JestLogo className="About__jest-logo" />,
         link: 'https://jestjs.io/',
     },
     {

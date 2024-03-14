@@ -29,6 +29,13 @@
   }
 }
 
+.About__jest-logo {
+  &.MuiSvgIcon-root {
+    height: 35px;
+    width: 20px;
+  }
+}
+
 .About__react-logo {
   pointer-events: none;
   &.MuiSvgIcon-root {
