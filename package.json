@@ -8,9 +8,6 @@
     "start": "vite",
     "build": "tsc && npm run copy && vite build",
     "serve": "vite preview",
-
-    "eject": "react-scripts eject",
-
     "copy": "npm run copy-cmaps && npm run copy-standard-fonts && npm run copy-worker",
     "copy-cmaps": "node --loader ts-node/esm ./scripts/copy-cmaps.ts",
     "copy-standard-fonts": "node --loader ts-node/esm ./scripts/copy-standard-fonts.ts",

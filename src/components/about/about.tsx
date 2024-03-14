@@ -13,6 +13,7 @@ import LuaLogo from "../../assets/icons/luaLogo";
 import JestLogo from "../../assets/icons/jestLogo";
 import JavaLogo from "../../assets/icons/javaLogo";
 import MongoDbLogo from "../../assets/icons/mongodbLogo";
+import TypescriptLogo from "../../assets/icons/typescriptLogo";
 
 type tSkillChip = {
     name: string;
@@ -23,6 +24,7 @@ type tSkillChip = {
 const skillsList: tSkillChip[] = [
     {
         name: 'Typescript',
+        CustomIcon: <TypescriptLogo className="About__javascript-logo" />,
         link: 'https://www.typescriptlang.org/',
     },
     {
