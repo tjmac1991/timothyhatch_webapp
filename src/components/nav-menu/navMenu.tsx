@@ -1,5 +1,5 @@
 import { Menu, MenuItem, Link, Divider } from "@mui/material";
-import { menuItems } from "../../constants/menuItems.constant";
+import { menuItems } from "../../constants/menuItems.constants";
 
 type tNavMenuProps = {
     open: boolean;

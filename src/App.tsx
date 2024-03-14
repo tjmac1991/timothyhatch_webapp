@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 import theme from './theme';
 import React, { useEffect, useState } from 'react';
-import { postList } from './constants/post.constant';
+import { postList } from './constants/posts.constants';
 import {
   Route,
   Routes,
