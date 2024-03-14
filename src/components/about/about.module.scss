@@ -1,5 +1,10 @@
+.About {
+    padding: 0 5%;
+
+}
+
 .About__chip-container {
-    padding: 2.5% 5%;
+    padding: 2.5% 0;
 
     &--chip {
         &.MuiChip-root {
@@ -7,6 +12,7 @@
         }
     }
 }
+
 
 .About__javascript-logo {
   &.MuiSvgIcon-root {
