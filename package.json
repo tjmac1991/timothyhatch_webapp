@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "tsc && npm run copy && vite build",
+    "build": "vite build",
     "serve": "vite preview",
     "copy": "npm run copy-cmaps && npm run copy-standard-fonts && npm run copy-worker",
     "copy-cmaps": "node --loader ts-node/esm ./scripts/copy-cmaps.ts",

@@ -13,6 +13,7 @@
 /public/cmaps
 /public/standard_fonts
 /public/pdf.worker.js
+/dist
 
 # misc
 .DS_Store
