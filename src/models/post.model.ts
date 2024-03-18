@@ -1,6 +1,8 @@
+import { ReactElement } from "react";
+
 export type tPosts = {
     title: string,
-    text: string,
+    Text: ReactElement,
     datetime: Date,
 }
 

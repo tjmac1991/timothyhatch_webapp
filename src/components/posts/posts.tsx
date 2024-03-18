@@ -8,13 +8,14 @@ type tPostProps = {
 }
 
 export default function Posts({postList}: tPostProps): ReactElement {
-    const renderedPost = postList.map((post, index) => {
+    const postListSorted = postList.sort((a,b) => b.datetime.getTime() - a.datetime.getTime());
+    const renderedPost = postListSorted.map((post, index) => {
         const endOfList = postList.length === index + 1;
         return (
             <Box key={index}>
                 <h1>{post.title}</h1>
                 <Box className="Posts__body">
-                    <Box component="p" className="Posts__text">{post.text}</Box>
+                    <Box component="p" className="Posts__text">{post.Text}</Box>
                     <Box className="Posts__date-container">
                         <CalendarMonthIcon />
                         <Box component="p" className="Posts__date-container--date">{post.datetime.toLocaleDateString()}</Box>
