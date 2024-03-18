@@ -49,6 +49,10 @@ export const skillsList: tSkillChip[] = [
         link: 'https://www.lua.org/',
     },
     {
+        name: 'Rapid',
+        link: 'https://en.wikipedia.org/wiki/RAPID#:~:text=RAPID%20is%20a%20high%2Dlevel,superseding%20the%20ARLA%20programming%20language.',
+    },
+    {
         name: 'React',
         CustomIcon: <ReactLogo className="About__react-logo" />,
         link: 'https://reactjs.org',
