@@ -16,10 +16,12 @@ import {
   useLocation
 } from 'react-router-dom';
 import About from './components/about/about';
+import Projects from './components/projects/projects';
 
 enum pageName {
   POSTS = 'Posts',
   ABOUT = 'About',
+  PROJECTS = 'Projects',
 }
 
 const setCurrentLocation = (pathname: string): pageName => {
@@ -27,6 +29,8 @@ const setCurrentLocation = (pathname: string): pageName => {
     switch (currentLocation) {
       case 'about':
         return pageName.ABOUT
+      case 'projects':
+        return pageName.PROJECTS
       default:
         return pageName.POSTS
     }
@@ -51,10 +55,11 @@ function App() {
       <CssBaseline />
       <Box className="App">
         <Header pageTitle={pageTitle} />
-          <Routes>
-            <Route path="/" element={<Posts postList={postList} />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Posts postList={postList} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
       </Box>
     </ThemeProvider>
   );

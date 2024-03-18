@@ -21,6 +21,10 @@ export const menuItems: tMenuItems[] = [
         link: '/about',
     },
     {
+        name: 'Projects',
+        link: '/projects',
+    },
+    {
         name: 'divider',
         divider: true,
     },
