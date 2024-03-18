@@ -2,8 +2,28 @@
     padding: 0 5%;
 }
 
+.Projects__main-title {
+    padding: 2.5% 0;
+}
+
+.Projects--sub-title {
+    padding: 10px 0;
+}
+
+.Projects__js-games {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px
+
+}
+.Projects--js-game {
+    display: flex;
+    flex-direction: column;
+}
+
 .Projects__board-game {
     &--image {
         width: 25%;
+        min-width: 200px;
     }
 }
