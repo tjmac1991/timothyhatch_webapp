@@ -13,6 +13,14 @@
     }
 }
 
+.About__text {
+    padding-bottom: 2.5%;
+}
+
+.About__download {
+  display: flex;
+  justify-content: center;
+}
 
 .About__javascript-logo {
   &.MuiSvgIcon-root {
