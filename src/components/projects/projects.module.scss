@@ -10,6 +10,25 @@
     padding: 10px 0;
 }
 
+.Projects__business-project {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 600px;
+
+    a {
+        display: block;
+    }
+
+    &--image {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+}
+
 .Projects__js-games {
     display: flex;
     flex-wrap: wrap;

@@ -1,8 +1,9 @@
-import { Box, Link, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { ReactElement } from "react";
 import StealTheCheeseIcon from "../../assets/icons/rsz_steal_the_cheese.png";
 import EtchSketchIcon from "../../assets/icons/rsz_etch_a_sketch.png";
 import StarFactionsIcon from "../../assets/icons/rsz_star_factions.png";
+import WhirligearDragonThumbnail from "../../assets/icons/whirligear_dragon_thumbnail.png";
 
 export default function Projects(): ReactElement {
     return (
@@ -11,13 +12,20 @@ export default function Projects(): ReactElement {
 
             <Typography className="Projects--sub-title" variant="h5">Shopify Website for Business</Typography>
 
-            <div>
-                <Link
+            <Box className="Projects__business-project">
+                <span>Whirligear Dragon e-commerce website</span>
+                <Box
+                    aria-label="Visit the Whirligear Dragon e-commerce website"
+                    component="a"
                     href="https://www.whirligeardragon.com"
                 >
-                    Whirligear Dragon
-                </Link> e-commerce website
-            </div>
+                    <img
+                        alt="Whirligear Dragon website homepage"
+                        className="Projects__business-project--image"
+                        src={WhirligearDragonThumbnail}
+                    />
+                </Box>
+            </Box>
             
             <Typography className="Projects__main-title" variant="h4">School Projects</Typography>
             
