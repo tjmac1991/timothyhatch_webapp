@@ -1,5 +1,6 @@
 import { Box, Link, Typography } from "@mui/material";
 import { ReactElement } from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function ShopCostSupport(): ReactElement {
     return (
@@ -28,6 +29,10 @@ export default function ShopCostSupport(): ReactElement {
                 ShopCost is an app for estimating job costs, managing shop rates, and creating
                 invoices.
             </Typography>
+
+            <Link component={RouterLink} to="/shopcost-privacy">
+                View the ShopCost Privacy Policy
+            </Link>
         </Box>
     );
 }

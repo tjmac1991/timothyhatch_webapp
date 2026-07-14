@@ -18,12 +18,14 @@ import {
 import About from './components/about/about';
 import Projects from './components/projects/projects';
 import ShopCostSupport from './components/shopcost-support/shopCostSupport';
+import ShopCostPrivacy from './components/shopcost-privacy/shopCostPrivacy';
 
 enum pageName {
   POSTS = 'Posts',
   ABOUT = 'About',
   PROJECTS = 'Projects',
   SHOPCOST_SUPPORT = 'ShopCost Support',
+  SHOPCOST_PRIVACY = 'ShopCost Privacy Policy',
 }
 
 const setCurrentLocation = (pathname: string): pageName => {
@@ -35,6 +37,8 @@ const setCurrentLocation = (pathname: string): pageName => {
         return pageName.PROJECTS
       case 'shopcost-support':
         return pageName.SHOPCOST_SUPPORT
+      case 'shopcost-privacy':
+        return pageName.SHOPCOST_PRIVACY
       default:
         return pageName.POSTS
     }
@@ -64,6 +68,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/shopcost-support" element={<ShopCostSupport />} />
+          <Route path="/shopcost-privacy" element={<ShopCostPrivacy />} />
         </Routes>
       </Box>
     </ThemeProvider>
