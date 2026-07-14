@@ -4,6 +4,7 @@ import StealTheCheeseIcon from "../../assets/icons/rsz_steal_the_cheese.png";
 import EtchSketchIcon from "../../assets/icons/rsz_etch_a_sketch.png";
 import StarFactionsIcon from "../../assets/icons/rsz_star_factions.png";
 import WhirligearDragonThumbnail from "../../assets/icons/whirligear_dragon_thumbnail.png";
+import GentleBreezeBallooningThumbnail from "../../assets/icons/gentle_breeze_ballooning_thumbnail.png";
 
 export default function Projects(): ReactElement {
     return (
@@ -23,6 +24,26 @@ export default function Projects(): ReactElement {
                         alt="Whirligear Dragon website homepage"
                         className="Projects__business-project--image"
                         src={WhirligearDragonThumbnail}
+                    />
+                </Box>
+            </Box>
+
+            <Typography className="Projects--sub-title" variant="h5">Custom Website for Business</Typography>
+
+            <Box className="Projects__business-project">
+                <span>
+                    Gentle Breeze Ballooning — built with React and TypeScript, then deployed as a
+                    serverless AWS website using S3 and CloudFront.
+                </span>
+                <Box
+                    aria-label="Visit the Gentle Breeze Ballooning website"
+                    component="a"
+                    href="https://www.gentlebreezeballooning.com/"
+                >
+                    <img
+                        alt="Gentle Breeze Ballooning website homepage"
+                        className="Projects__business-project--image"
+                        src={GentleBreezeBallooningThumbnail}
                     />
                 </Box>
             </Box>
