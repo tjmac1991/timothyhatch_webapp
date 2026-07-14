@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import { ReactElement } from "react";
 import StealTheCheeseIcon from "../../assets/icons/rsz_steal_the_cheese.png";
 import EtchSketchIcon from "../../assets/icons/rsz_etch_a_sketch.png";
@@ -7,6 +7,18 @@ import StarFactionsIcon from "../../assets/icons/rsz_star_factions.png";
 export default function Projects(): ReactElement {
     return (
         <Box className="Projects">
+            <Typography className="Projects__main-title" variant="h4">Business Projects</Typography>
+
+            <Typography className="Projects--sub-title" variant="h5">Shopify Website for Business</Typography>
+
+            <div>
+                <Link
+                    href="https://www.whirligeardragon.com"
+                >
+                    Whirligear Dragon
+                </Link> e-commerce website
+            </div>
+            
             <Typography className="Projects__main-title" variant="h4">School Projects</Typography>
             
             <Typography className="Projects--sub-title" variant="h5">Javascript Games (made with Perlenspiel)</Typography>
