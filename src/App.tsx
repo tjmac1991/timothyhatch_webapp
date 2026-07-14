@@ -17,11 +17,13 @@ import {
 } from 'react-router-dom';
 import About from './components/about/about';
 import Projects from './components/projects/projects';
+import ShopCostSupport from './components/shopcost-support/shopCostSupport';
 
 enum pageName {
   POSTS = 'Posts',
   ABOUT = 'About',
   PROJECTS = 'Projects',
+  SHOPCOST_SUPPORT = 'ShopCost Support',
 }
 
 const setCurrentLocation = (pathname: string): pageName => {
@@ -31,6 +33,8 @@ const setCurrentLocation = (pathname: string): pageName => {
         return pageName.ABOUT
       case 'projects':
         return pageName.PROJECTS
+      case 'shopcost-support':
+        return pageName.SHOPCOST_SUPPORT
       default:
         return pageName.POSTS
     }
@@ -59,6 +63,7 @@ function App() {
           <Route path="/" element={<Posts postList={postList} />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/shopcost-support" element={<ShopCostSupport />} />
         </Routes>
       </Box>
     </ThemeProvider>

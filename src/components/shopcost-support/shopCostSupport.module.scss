@@ -1,0 +1,18 @@
+.ShopCostSupport {
+    width: min(720px, 90%);
+    margin: 0 auto;
+    padding: clamp(32px, 6vw, 72px) 0;
+
+    h1 {
+        margin-bottom: 24px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin-bottom: 16px;
+        line-height: 1.7;
+    }
+}
