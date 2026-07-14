@@ -1,11 +1,11 @@
+@use "components/header/header.module";
+@use "components/posts/posts.module";
+@use "components/pdf-viewer/pdfViewer.module";
+@use "components/about/about.module";
+@use "components/projects/projects.module";
+@use "components/shopcost-support/shopCostSupport.module";
+@use "components/shopcost-privacy/shopCostPrivacy.module";
+
 .App {
   text-align: left;
 }
-
-@import "components/header/header.module";
-@import "components/posts/posts.module";
-@import "components/pdf-viewer/pdfViewer.module";
-@import "components/about/about.module";
-@import "components/projects/projects.module";
-@import "components/shopcost-support/shopCostSupport.module";
-@import "components/shopcost-privacy/shopCostPrivacy.module";

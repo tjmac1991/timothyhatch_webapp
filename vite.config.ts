@@ -6,6 +6,13 @@ export default defineConfig({
   plugins: [react(), svgr({
     svgrOptions: {},
   })],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern",
+      },
+    },
+  },
   build: {
     outDir: "./dist",
   },
