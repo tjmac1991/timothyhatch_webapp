@@ -24,8 +24,35 @@ See the section about [deployment](https://vitejs.dev/guide/build.html) for more
 
 ### `npm run serve`
 
-Serves the build as it would look in production from the `dist` folder as a preview locally.\
-This is not meant as a production server. [see more here for static deployment](https://vitejs.dev/guide/static-deploy.html)
+Serves `dist` at http://127.0.0.1:4173 using exact object paths, including the
+extensionless HTML pages uploaded to S3. Missing objects return 404 instead of an
+SPA fallback. This is a local preview, not a production server.
+
+### `npm run check:public-pages`
+
+After building, checks direct HTTP GET/HEAD responses, initial page content,
+policy text against the original component, canonical URLs, robots, sitemap,
+referenced assets, existing games/PDFs, and missing-page status.
+
+## Public-page rendering and deployment
+
+The build prerenders the five explicitly listed public routes in
+`src/publicPages.ts` using the existing React components and styles. It writes
+`dist/index.html`, extensionless HTML objects for the other routes, and
+`dist/sitemap.xml`. No runtime SSR service or browser-specific response is used.
+React still mounts normally for interactive navigation, color preferences, menus,
+and the About page's browser-only PDF viewer. The resume download link and About
+text are present without JavaScript. Public games still need JavaScript to play.
+
+Deploy the complete `dist` directory using the updated workflow. Its extra S3
+uploads explicitly set `Content-Type: text/html; charset=utf-8` on extensionless
+page objects; a plain `aws s3 sync` alone may assign an incorrect MIME type.
+The workflow then invalidates CloudFront's `/*` cache. Do not deploy the temporary
+build-time renderer. Add new public routes to the allowlist deliberately; private
+routes must never be added automatically.
+
+See [the crawler audit](docs/crawler-accessibility-audit.md) for live findings,
+CloudFront follow-up, and deployment verification.
 
 ## Learn More
 

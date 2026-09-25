@@ -1,8 +1,10 @@
-import { ReactElement } from "react";
-import PdfViewer from "../pdf-viewer/pdfViewer";
+import { lazy, ReactElement, Suspense } from "react";
 import { Box, Button, Chip, Typography } from "@mui/material";
 import { skillsList } from "../../constants/skills.constants";
 import { DownloadRounded } from "@mui/icons-material";
+
+// The canvas PDF viewer requires a browser. The resume download remains in HTML.
+const PdfViewer = import.meta.env.SSR ? () => null : lazy(() => import('../pdf-viewer/pdfViewer'));
 
 function yearsSince(startYear: number, startMonth = 1, startDay = 1): number {
   const now = new Date();
@@ -81,7 +83,9 @@ export default function About(): ReactElement {
                 </Button>
             </Box>
 
-            <PdfViewer file="./Timothy J. Hatch — Resume.pdf" />
+            <Suspense fallback={null}>
+                <PdfViewer file="./Timothy J. Hatch — Resume.pdf" />
+            </Suspense>
         </Box>
     );
 }

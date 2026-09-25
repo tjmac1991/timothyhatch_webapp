@@ -8,7 +8,7 @@ import {
   useMediaQuery
 } from '@mui/material';
 import theme from './theme';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { postList } from './constants/posts.constants';
 import {
   Route,
@@ -19,6 +19,7 @@ import About from './components/about/about';
 import Projects from './components/projects/projects';
 import ShopCostSupport from './components/shopcost-support/shopCostSupport';
 import ShopCostPrivacy from './components/shopcost-privacy/shopCostPrivacy';
+import { publicPages, siteOrigin } from './publicPages';
 
 enum pageName {
   POSTS = 'Posts',
@@ -47,7 +48,7 @@ const setCurrentLocation = (pathname: string): pageName => {
 function App() {
   const location = useLocation();
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  const [pageTitle, setPageTitle] = useState<string>('Posts');
+  const pageTitle = setCurrentLocation(location.pathname);
 
   const themeMode = React.useMemo(
     () => prefersDarkMode ? 'dark' : 'light',
@@ -55,7 +56,17 @@ function App() {
   )
 
   useEffect(() => {
-    setPageTitle(setCurrentLocation(location.pathname))
+    const page = publicPages.find(page => page.path === location.pathname.replace(/\/$/, '') || (page.path === '/' && location.pathname === '/'));
+    if (!page) return;
+    document.title = `${page.title} | Timothy Hatch`;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', page.description);
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = `${siteOrigin}${page.path}`;
   }, [location])
 
   return (

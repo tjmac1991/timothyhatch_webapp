@@ -9,6 +9,8 @@ import {
 
 if (document.getElementById('root')) {
   const rootDocument: HTMLElement = document.getElementById('root')!;
+  // Build-time HTML is readable before JS. Mount the existing interactive app
+  // normally so browser-specific media queries/PDF rendering stay unchanged.
   const root = ReactDOM.createRoot(rootDocument);
   root.render(
     <React.StrictMode>
